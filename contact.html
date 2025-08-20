@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | English Game Land</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-badge"></span>
+        <span>English Game Land</span>
+      </div>
+      <ul>
+        <li><a href="index_hero_top.html">ホーム</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="section" id="contact">
+    <div class="wrap">
+      <h2>お問い合わせ</h2>
+      <form action="https://formspree.io/f/mgvzjpkw" method="POST" class="contact-form">
+        <label>お名前<br>
+          <input type="text" name="name" required>
+        </label>
+        <label>Email<br>
+          <input type="email" name="email" required>
+        </label>
+        <label>お問い合わせ内容<br>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <button type="submit" class="button">送信</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="logo" style="margin-bottom:10px">
+        <span class="logo-badge"></span><span>English Game Land</span>
+      </div>
+      <small>© <span id="y"></span> English Game Land</small>
+      <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+    </div>
+  </footer>
+</body>
+</html>
