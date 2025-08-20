@@ -1,0 +1,132 @@
+
+/* =========================
+   English Game Land Styles
+   ========================= */
+:root{
+  --brand: #2ec4ff;
+  --brand2: #9b5cff;
+  --ink: #0b0b15;
+  --bg: #ffffff;
+  --muted: #667085;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+*{ box-sizing: border-box; }
+html, body{
+  margin:0; padding:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+a{ color: var(--brand2); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+/* Top navbar */
+.nav{
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+.nav-inner{
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 18px;
+}
+.logo{
+  display:flex; align-items:center; gap:12px; font-weight: 800; letter-spacing:.3px; font-size: 20px;
+}
+.logo-badge{
+  width:36px; height:36px; border-radius:10px;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  box-shadow: var(--shadow);
+}
+.nav ul{ list-style:none; display:flex; gap:18px; margin:0; padding:0; }
+.nav a.button{ text-decoration:none; }
+
+/* Buttons */
+.button{
+  display:inline-block; padding: 12px 18px; border-radius: 999px;
+  font-weight: 700; border: 0; cursor: pointer;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  color: white; box-shadow: var(--shadow);
+}
+.button.ghost{
+  background: transparent; color: var(--ink);
+  border:1px solid rgba(0,0,0,.12);
+}
+
+/* Hero */
+.hero{
+  max-width: 1100px; margin: 0 auto; padding: 72px 18px 36px;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center;
+}
+.hero h1{
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05; margin: 0 0 16px 0;
+}
+.kicker{
+  display: inline-flex; align-items: center; gap:10px;
+  padding: 6px 12px; border-radius: 999px; font-weight:700;
+  background: rgba(46,196,255,.15); color: #05699a; margin-bottom: 12px;
+}
+.hero p{ font-size: 18px; color: var(--muted); }
+
+.hero-media{
+  position: relative; border-radius: 24px; overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.hero-media img{ width:100%; display:block; }
+.hero-media .stamp{
+  position:absolute; bottom:12px; left:12px;
+  background: rgba(255,255,255,.92); backdrop-filter: blur(6px);
+  padding:10px 14px; border-radius: 12px; font-weight:700;
+}
+
+/* Sections */
+.section{ padding: 72px 18px; }
+.wrap{ max-width: 1100px; margin: 0 auto; }
+.grid-3{ display:grid; grid-template-columns: repeat(3,1fr); gap:22px; }
+.card{
+  border:1px solid rgba(0,0,0,.08); border-radius: 16px; padding: 18px; box-shadow: var(--shadow);
+  background:white;
+}
+.card h3{ margin-top:0; }
+.badge{ font-size:12px; font-weight:700; color:#2c7; background: #eafaf1; padding:6px 10px; border-radius:999px; }
+
+/* Pricing */
+.pricing{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.price-card{
+  border:1px solid rgba(0,0,0,.08); border-radius:16px; padding:22px; background:white; box-shadow: var(--shadow);
+}
+.price{ font-size: 36px; font-weight: 800; margin: 10px 0; }
+.small{ color: var(--muted); font-size: 12px; }
+
+/* Footer */
+.footer{ background:#0f1320; color:#e5e7eb; padding:36px 18px; }
+.footer a{ color:#b6c3ff; }
+.footer-inner{ max-width: 1100px; margin:0 auto; display:grid; grid-template-columns: 2fr 1fr 1fr; gap: 22px; }
+.footer small{ color:#98a2b3; }
+
+/* Mobile */
+@media (max-width: 900px){
+  .hero{ grid-template-columns: 1fr; }
+  .grid-3, .pricing{ grid-template-columns: 1fr; }
+  .footer-inner{ grid-template-columns: 1fr; }
+}
+
+/* Scroll-reveal animation */
+.reveal{ opacity:0; transform: translateY(24px); transition: 600ms ease; }
+.reveal.is-visible{ opacity:1; transform: none; }
+
+/* Bottom gradient fade hint (fixed overlay) */
+.scroll-fade::after{
+  content:"";
+  position: fixed; left:0; right:0; bottom:0; height: 120px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), var(--bg) 70%);
+  z-index: 40;
+}
